@@ -8,7 +8,6 @@ doc/
 *.vtf
 *.pyc
 a.out
-*.so
 *.dSYM/
 *.o
 *.i
