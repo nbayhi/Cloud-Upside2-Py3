@@ -193,5 +193,5 @@ else:
     shutil.copyfile(config_base, h5_file)
 
 print ("Running...")
-cmd = "{}/obj/upside {} {}".format(upside_path, upside_opts, h5_file)
+cmd = "{}/obj/upside {} {} | tee {}".format(upside_path, upside_opts, h5_file, log_file)
 sp.check_call(cmd, shell=True)
