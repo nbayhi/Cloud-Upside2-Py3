@@ -28,12 +28,14 @@ work_dir         = './'
 exchange         = False # if True, it will run the replica exchange simulation
                          # if False, it will run the constant temperature simulation
 
-n_rep            = 8     # replica number
-T_low            = 0.80 
-T_high           = 0.80
+n_rep            = 1    # replica number
+
+T_low            = 0.86 
+T_high           = 0.86
+
 replica_interval = 10    # How long takes an exchange attempt (upside time unit)
 
-continue_sim     = True  # when you run a new simulation, set it as "False"
+continue_sim     = False  # when you run a new simulation, set it as "False"
                          # "True" means restarting the simulation from the last frame
                          # of the previous trajectories (they should have the same 
                          # pdb_id and sim_id as the new simulation, and exist in the 
@@ -41,7 +43,6 @@ continue_sim     = True  # when you run a new simulation, set it as "False"
 
 randomseed       = 1     # np.random.randint(0,100000) 
                          # Might want to change the fixed seed for the random number
-
 
 #----------------------------------------------------------------------
 # Set the path and filename
