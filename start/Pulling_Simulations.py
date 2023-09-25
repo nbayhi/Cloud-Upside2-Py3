@@ -150,8 +150,8 @@ if not continue_sim:
 
 if not continue_sim:
     kwargs = dict(
-                   ask_before_using_AFM = '{}_AFM.dat'.format(pdb_id),
-                   #ask_before_using_AFM = '{}_AFM_auto_init.dat'.format(pdb_id),
+                   #ask_before_using_AFM = '{}_AFM.dat'.format(pdb_id),
+                   ask_before_using_AFM = 'Pulling_Simulations.dat'.format(pdb_id),
                  )
     
     config_stdout = ru.advanced_config(config_base, **kwargs)

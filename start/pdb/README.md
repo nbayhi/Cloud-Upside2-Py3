@@ -1,1 +1,1 @@
-## Input desired PDB's here
+## Input PDB's here
