@@ -34,6 +34,8 @@ continue_sim     = False  # when you run a new simulation, set it as "False"
 randomseed       =  np.random.randint(0,100000)
                          # Might want to change the fixed seed for the random number
 
+restraints = ""
+
 #----------------------------------------------------------------------
 ## Initialization
 #----------------------------------------------------------------------
@@ -50,7 +52,6 @@ for direc in make_dirs:
 h5_file  = "{}/{}.run.up".format(run_dir, pdb_id)
 log_file = "{}/{}.run.log".format(run_dir, pdb_id)
 
-
 #----------------------------------------------------------------------
 ## Check the previous trajectories if you set continue_sim = True 
 #----------------------------------------------------------------------
@@ -61,7 +62,6 @@ if continue_sim:
         print('Warning: no previous trajectory file {}!'.format(h5_file))
         print('set "continue_sim = False" and start a new simulation')
         continue_sim = False
-
     else:
         exist = os.path.exists(log_file)
         if not exist:
@@ -107,7 +107,9 @@ kwargs = dict(
                environment_potential     = param_dir_ff + "environment.h5",
                bb_environment_potential  = param_dir_ff + "bb_env.dat",
                chain_break_from_file     = "{}/{}.chain_breaks".format(input_dir, pdb_id),
-             )
+               restraint_groups          = restraints
+               
+            )
 
 if is_native:
     kwargs['initial_structure'] =  "{}/{}.initial.npy".format(input_dir, pdb_id)
