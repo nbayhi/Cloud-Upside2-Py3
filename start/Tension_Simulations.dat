@@ -1,0 +1,5 @@
+residue tension_x tension_y tension_z
+0   0.0 0.0 -0.2
+227 0.0 0.0 0.2
+
+# units of kT/Å ~ 4 pN for tension

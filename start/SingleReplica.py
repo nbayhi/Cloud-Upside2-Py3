@@ -15,9 +15,9 @@ import run_upside as ru
 ## General Settings and Path
 #----------------------------------------------------------------------
 
-pdb_id         = 'Open' # switch to 1dfn for multi-chain showing
+pdb_id         = ' ' # switch to 1dfn for multi-chain showing
 pdb_dir        = './pdb'
-sim_id         = 'zmp1_open'
+sim_id         = ' '
 is_native      = True
 ff             = 'ff_2.1'
 T              = 0.8
