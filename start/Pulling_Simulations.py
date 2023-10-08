@@ -14,14 +14,16 @@ import run_upside as ru
 ## General Settings and Path
 # ----------------------------------------------------------------------
 
-pdb_id = "1qhj"
+randomseed = np.random.randint(0,100000)
+
+pdb_id = "AB"
 pdb_dir = "./pdb"
-sim_id = "pulling_test"
+sim_id = pdb_id+ "_" + str(randomseed)
 is_native = True
 ff = "ff_2.1"
 thickness = 31.8
 
-duration = 5000
+duration = 500
 frame_interval = 50
 work_dir = "./"
 
@@ -38,14 +40,7 @@ T_high = 0.86
 
 replica_interval = 10  # How long takes an exchange attempt (upside time unit)
 
-continue_sim = False  # when you run a new simulation, set it as "False"
-# "True" means restarting the simulation from the last frame
-# of the previous trajectories (they should have the same
-# pdb_id and sim_id as the new simulation, and exist in the
-# corresponding path)
-
-randomseed = 1  # np.random.randint(0,100000)
-# Might want to change the fixed seed for the random number
+continue_sim = False  
 
 # ----------------------------------------------------------------------
 # Set the path and filename
