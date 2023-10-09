@@ -34,7 +34,7 @@ continue_sim     = False  # when you run a new simulation, set it as "False"
 randomseed       =  np.random.randint(0,100000)
                          # Might want to change the fixed seed for the random number
 
-restraints = ""
+#restraints = ""
 
 #----------------------------------------------------------------------
 ## Initialization
@@ -107,8 +107,6 @@ kwargs = dict(
                environment_potential     = param_dir_ff + "environment.h5",
                bb_environment_potential  = param_dir_ff + "bb_env.dat",
                chain_break_from_file     = "{}/{}.chain_breaks".format(input_dir, pdb_id),
-               restraint_groups          = restraints
-               
             )
 
 if is_native:
@@ -131,7 +129,8 @@ if not continue_sim:
                    #pair_spring      = 'spring-pair-xyz.dat',
                    #cavity_radius    =30,
                    #make_unbound     = True,
-                   #nail = 'nail-xyz.dat'
+                   #nail = 'nail-xyz.dat',
+                   #restraint_groups          = restraints
                  )
 
     config_stdout = ru.advanced_config(config_base, **kwargs)
