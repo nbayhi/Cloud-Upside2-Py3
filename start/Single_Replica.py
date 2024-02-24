@@ -15,17 +15,17 @@ import run_upside as ru
 ## General Settings and Path
 #----------------------------------------------------------------------
 
-pdb_id         = ' ' # switch to 1dfn for multi-chain showing
-pdb_dir        = './pdb'
-sim_id         = ' '
+pdb_id         = sys.argv[1] # switch to 1dfn for multi-chain showing
+pdb_dir        = sys.argv[2]
+sim_id         = sys.argv[3]
 is_native      = True
 ff             = 'ff_2.1'
 T              = 0.8
-duration       = 1000
-frame_interval = 10
+duration       = sys.argv[4]
+frame_interval = sys.argv[5]
 base_dir       = './'
 
-continue_sim     = False  # when you run a new simulation, set it as "False"
+continue_sim     = sys.argv[6]  # when you run a new simulation, set it as "False"
                          # "True" means restarting the simulation from the last frame
                          # of the previous trajectories (they should have the same 
                          # pdb_id and sim_id as the new simulation, and exist in the 
