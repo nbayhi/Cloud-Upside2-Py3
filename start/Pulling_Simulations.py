@@ -13,22 +13,21 @@ import run_upside as ru
 # ----------------------------------------------------------------------
 ## General Settings and Path
 # ----------------------------------------------------------------------
+pdb_id         = sys.argv[1] # switch to 1dfn for multi-chain showing
+pdb_dir        = sys.argv[2]
+sim_id         = sys.argv[3]
+is_native      = True
+ff             = 'ff_2.1'
+T              = 0.8
 
-randomseed = np.random.randint(0,100000)
-
-pdb_id = "AB"
-pdb_dir = "./pdb"
-sim_id = pdb_id+ "_" + str(randomseed)
-is_native = True
-ff = "ff_2.1"
 thickness = 31.8
+duration       = sys.argv[4]
+frame_interval = sys.argv[5]
 
-duration = 500
-frame_interval = 50
 work_dir = "./"
 
 # Choose between tension and pulling simulations
-sim_type = "tension"
+sim_type = sys.argv(6)
 
 exchange = False  # if True, it will run the replica exchange simulation
 # if False, it will run the constant temperature simulation
@@ -40,7 +39,7 @@ T_high = 0.86
 
 replica_interval = 10  # How long takes an exchange attempt (upside time unit)
 
-continue_sim = False  
+continue_sim = sys.argv(7)  
 
 # ----------------------------------------------------------------------
 # Set the path and filename
