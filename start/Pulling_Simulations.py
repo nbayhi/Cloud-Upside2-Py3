@@ -209,6 +209,9 @@ if continue_sim:
                 n = t.get_node("/output_previous_%i" % (i - 1))
             t.root.input.pos[:, :, 0] = n.pos[-1, 0]
 
+            if '/input/mom' in t:
+                t.remove_node(t.root.input, 'mom', recursive=True)
+
             if "tip_pos" in t.root.output:
                 tip_pos = t.root.output.tip_pos[-1]
                 # time_estimate   = t.root.output.time_estimate[-1][0]

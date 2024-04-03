@@ -184,6 +184,10 @@ if continue_sim:
         t.root.input.pos[:,:,0] = n.pos[-1,0]
         mom = n.mom[-1,0]
         new_mom = mom.reshape(mom.shape[0], mom.shape[1], 1)
+        
+        if '/input/mom' in t:
+            t.remove_node(t.root.input, 'mom', recursive=True)
+
         t.create_earray(t.root.input, 'mom', obj=new_mom,
                         filters=tb.Filters(complib='zlib', 
                                            complevel=5, fletcher32=True))
