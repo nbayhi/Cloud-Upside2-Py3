@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import sys
 
 nb_path = '/content/drive/MyDrive/DynaLab_Dev/Packages'
 sys.path.insert(1,nb_path)
@@ -6,7 +7,6 @@ sys.path.insert(1,nb_path)
 import prody
 import numpy as np
 
-import sys
 import argparse
 import tables
 import collections
